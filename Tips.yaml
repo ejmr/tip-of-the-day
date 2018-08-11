@@ -1,0 +1,238 @@
+---
+-
+  topic: qutebrowser
+  tip: >
+    The fastest way to switch tabs is to use `gt`, which prompts
+    you for the name of the tab.  You may type any part of the tabs
+    title or its URI and then use tab-completion to reduce the number
+    of matches.
+-
+  topic: qutebrowser
+  tip: >
+    The keys `gd` will download the current page, and `;d` will download
+    an image using hinting to select the image.  But if you want to
+    download the page given a link, i.e. using hinting to pick a link
+    and then downloading the page to which it points, then the following
+    custom bindings are helpful.
+
+    ~~~~~
+    config.bind(",d", "spawn --verbose wget -P/tmp {url}")
+    config.bind(",D", "hint all spawn --verbose wget -P/tmp {hint-url}")
+    ~~~~~
+
+    Obviously these commands assume `wget` is available.
+-
+  topic: qutebrowser
+  tip: >
+    You can use `:wq` to "write" the current session and quit, saving
+    all open tabs so that the browser automatically re-opens them on
+    the next launch.  Similar to Vim, though, `ZZ` is an easier-to-type
+    binding which does the exact same thing.
+-
+  topic: qutebrowser
+  tip: >
+    When a command involves copying, e.g. yanking a pasting, the
+    default key-bindings use case to distinguish specifically between
+    the clipboard (`pp`, `yy`) and the primary selection (`pP` and `yY`).
+-
+  topic: qutebrowser
+  tip: >
+    Pressing `gD` will detatch the current tab and "give" it to a new
+    window, via the `:tab-give` command.
+-
+  topic: qutebrowser
+  tip: >
+    Many, many websites have a search bar at the top of pages, or as
+    the prominent or sole HTML form available.  You can select any input
+    form with hints via `;t`.  However, when a site has something like
+    a search-bar at the top, you can more quickly select it and switch
+    to input mode via `gi`, which will select the first input form on
+    the page without prompting for any hints.  This is a useful shortcut
+    for sites such as wikis, forums, programming references, etc. which
+    provide means for searching content.
+-
+  topic: rTorrent
+  tip: >
+    Use <return> to add a torrent which will be inactive, and then use
+    ^o to change the output directory if desired, and finally use ^s
+    to start the torrent.  You cannot use ^o if you use <backspace>
+    to add the torrent.
+-
+  topic: rTorrent
+  tip: >
+    Lowercase letters throttle the upload speed while the same uppercase
+    letters throttle the download speed.
+-
+  topic: rTorrent
+  tip: >
+    Use the plus and minus keys on the main view to change the priority
+    of active torrents.
+-
+  topic: rTorrent
+  tip: >
+    Within the file view use the <space> key to change the priority of a
+    specific file or directory, and use the * key to change the priority
+    for all files.
+-
+  topic: rtv
+  tip: >
+    Use the plus character to open multiple sub-reddits at the same time,
+    e.g. `rtv -s programming+emulation+rust`.
+-
+  topic: rtv
+  tip: >
+    The default key-bindings are roughly similar to those of vim.  But a
+    notable exception is the `/` key, which does not perform a search;
+    instead it switches to a different sub-reddit.  Use the `f` key to
+    search the content of the current sub-reddit.
+-
+  topic: rtv
+  tip: >
+    Use the numeric keys `1` through `5` to cycle through the post order,
+    i.e. "hot", "top", "rising", "new", and "controversial", respectively.
+-
+  topic: chronic
+  tip: >
+    The command `chronic-period '%F' today week day` creates a list of
+    all dates for the next seven days.
+-
+  topic: urlscan
+  tip: >
+    Pipe content into the command `urlscan -n -d` to extract all URLs
+    from said content, removing any duplicates, and listing the results
+    to standard output.
+-
+  topic: Kakoune
+  tip: >
+    Pressing `<a-;>` in Insert Mode will escape to Normal Mode for a
+    single command.  For example: `<a-;><a-j>` will join the bottom line
+    to the current and then immediately return to Insert Mode without
+    moving the cursor(s).
+-
+  topic: Kakoune
+  tip: >
+    When writing Markdown documents an easy way to create a setext-style
+    level-one header, i.e. a title followed by line with an equal number
+    of `=` characters, is to type the title and then press `xypjxr=d`.
+    The keys `xyp` select the entire title line, yank it, and immediately
+    paste a copy to the line below.  The key `j` moves down to the copied line.
+    The keys `xr=` select the copy and replace all of its characters with
+    the equal sign.  And the final `d` deletes the extra equal sign character
+    that will appear under the cursor.
+-
+  topic: Kakoune
+  tip: >
+    The keys `@` and `<a-@>` in Normal Mode, which convert tabs to spaces
+    and spaces to tabs, respectively, both accept a count argument which
+    will override the buffer `tabstop` value.  E.g. `%8@` will convert
+    all tabs in a buffer to eight spaces regardless of default settings.
+-
+  topic: Kakoune
+  tip: >
+    Pressing `<c-r><c>` while in insert mode will insert the contents
+    of the register named `<c>`.  So for example, `<c-r>h` will
+    insert whatever is in the `h` register.  Kakoune has special,
+    read-only registers with useful content that you may want to
+    insert sometimes.  The following are those register names and
+    what they contain.
+
+    - `%` contains the current buffer name.
+    - `.` has the contents of the current selection.
+    - `#` is where Kakoune stores the indices for all selections.
+    - `:` stores the most recent command, **NOT** its output, if any.
+    - And finally `_` is the null register and is always empty.
+
+    I admit to, thus far, failing to find a use-case for the underscore
+    register.  But the rest have useful applications.  Also keep in
+    mind that you can use registers in prompt mode as well.
+-
+  topic: Kakoune
+  tip: >
+    For keys which move the cursor, holding Shift will move the cursor
+    while also extending the main selection; e.g. `w` moves forward one
+    word while `W` does so while also extending the selection to include
+    that word.
+
+    Holding Alt is the most common way of changing the direction of an
+    action.  For example, in Vim (and most Vim-like programs) the keys
+    `/` and `?` search forward and backward, respectively.  In Kakoune,
+    however, `/` searches forward and `<a-/>` searches backwards.
+    Meanwhile `?` and `<a-?>` do the same but also extend the main
+    selection in the process.  This is consistent with how Shift
+    modifies many other keys, since on most keyboard layouts you type
+    `?` by holding Shift and pressing the `/` key.
+
+    The key `n`, commonly used in conjunction with searches, reflects
+    both of these axioms: `n` selects the next match, `N` adds the next
+    match to the selection, and `<a-n>` and `<a-N>` do the same but in
+    the opposite direction, using the previous match instead.
+-
+  topic: Fish
+  tip: >
+    Use three asterisks for a wildcard match that will recurse through
+    sub-directories, e.g. `yamllint ***.yaml` will run `yamllint` on all
+    YAML files in the current directory and all of its sub-directories,
+    and their sub-directories, etc.
+-
+  topic: Fish
+  tip: >
+    Pressing Alt+Up will recall the last argument from the previous
+    command, and multiple presses will sequentially recall more arguments.
+    If you want to execute a previous command with mostly the same
+    arguments then it is often fastest to type any part of the command
+    and press Up to substitute the entire command, and *then* edit the
+    command as desired.
+
+    Typing part of a command and pressing Up is also the fastest way to
+    recall a (potentially much) more older command from the history.
+-
+  topic: Fish
+  tip: >
+    Remember to always wrap braces in single-quotes when those braces
+    are meant to be an argument to a command.  Otherwise, due to brace
+    expansion, you will get an error at best, or execute something
+    entirely unintended at worst.
+-
+  topic: Fish
+  tip: >
+    Unlike the most common POSIX shells, Fish has no dedicated syntax
+    for process substitution.  Instead use the `psub` builtin together
+    with normal command substitution. For example, wherever you see `bar
+    <(foo)` in Bash script, you write `bar (foo | psub)` in Fish instead.
+-
+  topic: Fish
+  tip: >
+    **NEVER USE `psub --fifo`!**
+
+    Seriously.  Never.
+
+    Well, unless you are one-hundred percent certain `psub` will be
+    handling less than 8KiB of data.  If the FIFO receives more than
+    that a deadlock is likely.
+-
+  topic: C++
+  tip: >
+    The data type `char` is always one byte, i.e. `sizeof(char)`
+    always equals one, without exception.  Furthermore, the language
+    guarantees that a byte is *at least* eight bits, but depending
+    on the architecture it may have more bits.  The `CHAR_BIT` macro
+    inside of the `<climits>` standard header tells you how many bits
+    constitute a single `char` on given hardware, and its value will
+    never be less than eight.
+
+    But again, regardless of the value of `CHAR_BIT`, the `char` type
+    always represents one single, individual, sole byte.
+-
+  topic: Shell Scripting
+  tip: >
+    The documents at `/usr/share/dict/*` are great sources of input
+    whenever you want to peform an operation for a small (or large
+    even) subset of words.  For example, this simple script prints to
+    standard-output a random word beginning with the prefix "lem".
+
+    ~~~~~
+    grep -i "^lem" /usr/share/dict/* \
+    | cut -d':' -f2                  \
+    | shuf                           \
+    | head -n1
+    ~~~~~
