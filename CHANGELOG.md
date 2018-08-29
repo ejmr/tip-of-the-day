@@ -6,6 +6,13 @@ Please read ["Keep a Changelog"](https://keepachangelog.com/en/1.0.0/)
 for greater details about the purpose and format.  This project follows
 [Semantic Versioning](https://semver.org/) for its version numbers.
 
+## Unreleased
+
+### Added
+- Tips for `vifm`
+### Fixed
+- Spacing on tips with one or more line-breaks.
+
 ## [0.1.0] - 2018-08-10
 
 **Note:** This is the initial public release, hence the very

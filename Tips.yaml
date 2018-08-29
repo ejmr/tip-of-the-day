@@ -15,10 +15,10 @@
     and then downloading the page to which it points, then the following
     custom bindings are helpful.
 
-    ~~~~~
-    config.bind(",d", "spawn --verbose wget -P/tmp {url}")
-    config.bind(",D", "hint all spawn --verbose wget -P/tmp {hint-url}")
-    ~~~~~
+        ~~~~~
+        config.bind(",d", "spawn --verbose wget -P/tmp {url}")
+        config.bind(",D", "hint all spawn --verbose wget -P/tmp {hint-url}")
+        ~~~~~
 
     Obviously these commands assume `wget` is available.
 -
@@ -128,7 +128,7 @@
     all tabs in a buffer to eight spaces regardless of default settings.
 -
   topic: Kakoune
-  tip: >
+  tip: |
     Pressing `<c-r><c>` while in insert mode will insert the contents
     of the register named `<c>`.  So for example, `<c-r>h` will
     insert whatever is in the `h` register.  Kakoune has special,
@@ -147,7 +147,7 @@
     mind that you can use registers in prompt mode as well.
 -
   topic: Kakoune
-  tip: >
+  tip: |
     For keys which move the cursor, holding Shift will move the cursor
     while also extending the main selection; e.g. `w` moves forward one
     word while `W` does so while also extending the selection to include
@@ -175,7 +175,7 @@
     and their sub-directories, etc.
 -
   topic: Fish
-  tip: >
+  tip: |
     Pressing Alt+Up will recall the last argument from the previous
     command, and multiple presses will sequentially recall more arguments.
     If you want to execute a previous command with mostly the same
@@ -202,6 +202,11 @@
 -
   topic: Fish
   tip: >
+    Look at Fisherman-based projects before writing a function or
+    plugin or really anything whatsoever,
+-
+  topic: Fish
+  tip: |
     **NEVER USE `psub --fifo`!**
 
     Seriously.  Never.
@@ -230,9 +235,59 @@
     even) subset of words.  For example, this simple script prints to
     standard-output a random word beginning with the prefix "lem".
 
-    ~~~~~
-    grep -i "^lem" /usr/share/dict/* \
-    | cut -d':' -f2                  \
-    | shuf                           \
-    | head -n1
-    ~~~~~
+        grep -i "^lem" /usr/share/dict/* \
+        | cut -d':' -f2                  \
+        | shuf                           \
+        | head -n1
+
+    Note that the quotes are not necessary, but they do help avoid
+    tripping up some shells.
+-
+  topic: vifm
+  tip: >
+    You may continue to hold the Control key for default bindings
+    which begin with such a key.  For example, `CTRL-w x` and `CTRL-w
+    CTRL-x` are equivalent.
+-
+  topic: vifm
+  tip: >
+    You can show or hide dotfiles via `zo` and `zm`, respectively,
+    and use `za` to toggle between the two states.
+-
+  topic: vifm
+  tip: >
+    Use `al` and `rl` to create absolute and relative links, respectively,
+    to yanked files.
+-
+  topic: vifm
+  tip: >
+    Preceeding a yank or delete command with a register will store
+    the names of the affected files in that register.
+-
+  topic: vifm
+  tip: >
+    Press the `=` key to quickly filter out all files that do
+    not match the given regular expression.  This filter is
+    specific to its directory and undone via `zr` or simply
+    leaving the directory.
+-
+  topic: vifm
+  tip: >
+    Some operators, like `d`, accept selectors.  And those selectors
+    are mostly the same as in Vim: e.g. `dj2` deletes the file under
+    the cursor and the next two files below.  However, there are three
+    selectors special to vifm:
+
+    1. `a` - All files in current view
+    2. `s` - All selected files
+    3. `S` - All non-selected files
+
+    For example, `gua` will convert to lowercase all filenames in view.
+-
+  topic: vifm
+  tip: >
+    Press `ga` when the cursor is on a directory to estimate
+    its size.  Vifm uses a cache to make the process more
+    efficient but you can use `gA` to skip the cache and
+    explicitly calculate the size.
+...
