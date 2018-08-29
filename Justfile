@@ -2,9 +2,9 @@ python = `which python3.6`
 script = "totd.py"
 pager = "cowsay -f hellokitty"
 
-# Run the program.
-run +arguments="":
-	{{python}} ./{{script}} {{arguments}} | {{pager}}
+# Run as intended, with no arguments through a pager.
+run:
+	{{python}} ./{{script}} | {{pager}}
 
 # Lint and format the source code.
 lint-python:
