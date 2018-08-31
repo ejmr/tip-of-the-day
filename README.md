@@ -60,12 +60,15 @@ scope of this process.
 
 ## OPTIONS
 
-`--tip-file=<path>`
+`--tip-file <path1> [--tip-file <path2> ...]`
 
 :  A path to a YAML document containing the tips from which the program
-selects one to display.  This overrides the `TOTD_TIP_FILE` environment
-variable, documented below.  If the user does not provide this option
-then the program uses the file named by that environment variable.
+selects one to display.  The user can provide this option more than
+once, in which case ToTD will randomly select one of the files from
+which to select tips.  The value(s) of this option overrides the
+`TOTD_TIP_FILE` environment variable, documented below.  If the user
+does not provide this option then the program uses the file named by
+that environment variable.
 
 ## ENVIRONMENT
 
