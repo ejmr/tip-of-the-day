@@ -49,14 +49,23 @@ will always assume that tip content *might* by Markdown.
 * [Click](http://click.pocoo.org/6/) >= 6.0
 * [ruamel.yaml](http://yaml.readthedocs.io/en/latest/index.html) >= 0.15
 
+## OPTIONS
+
+`--tip-file=<path>`
+
+:  A path to a YAML document containing the tips from which the program
+selects one to display.  This overrides the `TOTD_TIP_FILE` environment
+variable, documented below.  If the user does not provide this option
+then the program uses the file named by that environment variable.
+
 ## ENVIRONMENT
 
 The program uses the following environment variables:
 
 * `TOTD_TIP_FILE`:
   This must be an absolute path to the `Tips.yaml` file containing the
-  actual tips.  If undefined then the program assumes `Tips.yaml` is in
-  the same directory as the program itself.
+  actual tips.  The program will halt with an error if this variable
+  is undefined *and* the user does not provide the `--tip-file` option.
 
 ## AUTHOR
 
