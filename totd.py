@@ -1,6 +1,5 @@
 from pathlib import Path
 from typing import Dict
-import os
 import random
 import click
 import ruamel.yaml
