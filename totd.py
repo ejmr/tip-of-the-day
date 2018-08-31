@@ -5,7 +5,7 @@ import click
 import ruamel.yaml
 
 __author__ = "Eric James Michael Ritz"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 
 class Tip:
