@@ -9,6 +9,8 @@ for greater details about the purpose and format.  This project follows
 ## Unreleased
 
 ### Added
+- List of required packages to use with `pip`, specifically
+  `pip install -r requirements.txt` now installs dependencies.
 - `--tip-file` option to load tips from a given file.
 - Tips for `vifm`.
 ### Fixed

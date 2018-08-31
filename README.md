@@ -49,6 +49,15 @@ will always assume that tip content *might* by Markdown.
 * [Click](http://click.pocoo.org/6/) >= 6.0
 * [ruamel.yaml](http://yaml.readthedocs.io/en/latest/index.html) >= 0.15
 
+## INSTALLATION
+
+To install the Python packages listed above you can run:
+
+    pip install -r requirements.txt
+
+Installing Python itself (and thus `pip`), however, is beyond the
+scope of this process.
+
 ## OPTIONS
 
 `--tip-file=<path>`

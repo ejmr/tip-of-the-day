@@ -1,0 +1,3 @@
+totd
+click>=6.0
+ruamel.yaml>=0.15

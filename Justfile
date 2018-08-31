@@ -23,6 +23,10 @@ lint-docs:
 # Lint everything.
 lint: lint-python lint-yaml lint-docs
 
+# Install all dependencies.
+install-deps:
+	pip install -r requirements.txt
+
 # Push everything to our official GitHub repository.
 push:
 	git push --all origin
