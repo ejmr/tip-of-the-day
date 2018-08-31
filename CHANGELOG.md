@@ -1,7 +1,7 @@
 Changelog
 =========
 
-We document all notable changes to "Tip of the Day" in this file.
+We document all notable changes to "Tip of the Day" (ToTD) in this file.
 Please read ["Keep a Changelog"](https://keepachangelog.com/en/1.0.0/)
 for greater details about the purpose and format.  This project follows
 [Semantic Versioning](https://semver.org/) for its version numbers.
@@ -12,6 +12,11 @@ for greater details about the purpose and format.  This project follows
 - List of required packages to use with `pip`, specifically
   `pip install -r requirements.txt` now installs dependencies.
 - `--tip-file` option to load tips from a given file.
+  - The user can provide the option multiple times.
+  - ToTD will randomly select one file as a source of tips.
+  - The `test-multiple-tip-files` recipe tests this behavior.
+    However, the test depends on data which is currently not
+    part of the repository.
 - Tips for `vifm`.
 ### Fixed
 - Spacing on tips with one or more line-breaks.

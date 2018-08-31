@@ -2,9 +2,19 @@ python = `which python3.6`
 script = "totd.py"
 pager = "cowsay -f hellokitty"
 
-# Run as intended, with no arguments through a pager.
+# Run ToTD with no arguments and through a pager.
 run:
 	{{python}} ./{{script}} | {{pager}}
+
+# Test support for multiple tip files.
+test-multiple-tip-files:
+	{{python}} ./{{script}}             \
+		--tip-file ./test-data/foo.yaml \
+		--tip-file ./test-data/bar.yaml \
+		--tip-file ./test-data/baz.yaml
+
+# Run all of our tests.
+test: test-multiple-tip-files
 
 # Lint and format the source code.
 lint-python:

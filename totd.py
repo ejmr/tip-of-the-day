@@ -32,13 +32,13 @@ class Tip:
 
 @click.command()
 @click.version_option(version=__version__)
-@click.option("--tip-file",
+@click.option("--tip-file", multiple=True,
               type=click.Path(exists=True),
-              help="Path to the YAML document of tips")
+              help="Path to the YAML document of tips.")
 def totd(tip_file):
     """Display a random software or programming tip."""
     yaml = ruamel.yaml.YAML(typ="safe")
-    tips = yaml.load(Path(tip_file))
+    tips = yaml.load(Path(random.choice(tip_file)))
     print(Tip(random.choice(tips)))
 
 
