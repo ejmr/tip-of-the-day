@@ -1,4 +1,6 @@
+# My personal files for development to ignore.
 TODO
+test-data/
 
 # Created by https://www.gitignore.io/api/linux,python
 
