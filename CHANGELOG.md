@@ -15,6 +15,8 @@ for greater details about the purpose and format.  This project follows
 - Tips for `vifm`.
 ### Fixed
 - Spacing on tips with one or more line-breaks.
+### Changed
+- Releasing updates via `just push` will fail if any linters fail.
 ### Removed
 - Default value for the tips file, meaning users now *must* either
   define the `TOTD_TIP_FILE` environment variable or use the new

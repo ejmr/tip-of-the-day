@@ -27,8 +27,8 @@ lint: lint-python lint-yaml lint-docs
 install-deps:
 	pip install -r requirements.txt
 
-# Push everything to our official GitHub repository.
-push:
+# Push everything to our GitHub repository.
+push: lint
 	git push --all origin
 
 # Fetch all updates from our GitHub repository.
