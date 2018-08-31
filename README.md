@@ -97,7 +97,7 @@ takes precedence and ToTD ignores this variable.
 ## SEE ALSO
 
 - [fortune(6)](https://linux.die.net/man/6/fortune)
-- [cowsay](https://en.wikipedia.org/wiki/Cowsay)
+- [cowsay(1)](https://en.m.wikipedia.org/wiki/Cowsay)
 
 
 
