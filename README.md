@@ -74,10 +74,17 @@ that environment variable.
 
 The program uses the following environment variables:
 
-* `TOTD_TIP_FILE`:
-  This must be an absolute path to the `Tips.yaml` file containing the
-  actual tips.  The program will halt with an error if this variable
-  is undefined *and* the user does not provide the `--tip-file` option.
+`TOTD_TIP_FILE`
+
+:  The value must be an absolute path to a YAML document of tips,
+of the exact same kind which the user can give to the `--tip-file`
+option.  Multiple paths, each separated by a single colon, will cause
+the program to randomly select one of those files on each invocation.
+This is the same as using the `--tip-file` option more than once.
+The user must define this variable *or* name a document with the
+`--tip-file` option, otherwise the program will error-out.  If the
+user defines this variable *and* uses `--tip-file` then the option
+takes precedence and ToTD ignores this variable.
 
 ## AUTHOR
 

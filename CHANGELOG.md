@@ -17,6 +17,7 @@ for greater details about the purpose and format.  This project follows
   - The `test-multiple-tip-files` recipe tests this behavior.
     However, the test depends on data which is currently not
     part of the repository.
+- Support multiple files via the `TOTD_TIP_FILE` environment variable.
 - Tips for `vifm`.
 ### Fixed
 - Spacing on tips with one or more line-breaks.
